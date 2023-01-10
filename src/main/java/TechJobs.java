@@ -140,31 +140,12 @@ public class TechJobs {
 //        System.out.println("printJobs is not implemented yet");
         for (int i = 0; i<someJobs.size(); i++) {
             HashMap<String, String> listings = someJobs.get(i);
-//
-//            System.out.println(listings);
                 System.out.println("*****");
             for (Map.Entry<String, String> listing : listings.entrySet()) {
 
                 System.out.println(listing.getKey() + ": " + listing.getValue());
             }
                 System.out.println("*****\n");
-    //
-
-//                System.out.println("*****");
-//
-//                System.out.println(posting.keySet());
-//                System.out.println(posting.values());
-//                System.out.println("*****\n");
-//            }
-
-//            for (HashMap header : headers){
-//
-//            }
-
-
-
         }
-//        System.out.println(someJobs);
-//        System.out.println(getUserSelection());
     }
 }
