@@ -138,6 +138,10 @@ public class TechJobs {
 //        *****
 
 //        System.out.println("printJobs is not implemented yet");
+        if (someJobs.size() == 0){
+            System.out.println("No results found.");
+        } else {
+
         for (int i = 0; i<someJobs.size(); i++) {
             HashMap<String, String> listings = someJobs.get(i);
                 System.out.println("*****");
@@ -146,6 +150,7 @@ public class TechJobs {
                 System.out.println(listing.getKey() + ": " + listing.getValue());
             }
                 System.out.println("*****\n");
+        }
         }
     }
 }
