@@ -101,34 +101,14 @@ public class JobData {
 
         for (int i = 0; i < allJobs.size(); i++){
             HashMap<String, String> listing = allJobs.get(i);
-
-
             String valueNCS = value.toLowerCase();
-//            String lKey = listing.get(value);
-//            String lKeyNCS = lKey.toLowerCase();
-//            String lValue = listing.get(value);
-//            String lValueNCS = lValue.toLowerCase();
-
             String lK = listing.keySet().toString().toLowerCase();
             String lV = listing.values().toString().toLowerCase();
-//
+
             HashMap<String, String> listingNCS = new HashMap<>();
             listingNCS.put(lK, lV);
 
-
-
-//            String lNCSKey = listingNCS.get(valueNCS);
-//            String lNCSValue = listingNCS.get(valueNCS);
-//
-//            String lValue = String.join(",", listing.values());
-//            String lKeyNCS = lKey.toLowerCase();
-//            String lValueNCS = lValue.toLowerCase();
-
-
-
-
             if (lK.contains(valueNCS) || lV.contains(valueNCS)){
-//                if (listing.containsValue(value) || listing.containsKey(value)){
                     if (!selectedJobs.contains(listing)){
                         selectedJobs.add(listing);
                     }
