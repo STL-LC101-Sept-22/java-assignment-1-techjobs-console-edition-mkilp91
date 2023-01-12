@@ -98,8 +98,50 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
+
+        ArrayList<HashMap<String, String>> selectedJobs = new ArrayList<>();
+
+        for (int i = 0; i < allJobs.size(); i++){
+            HashMap<String, String> listing = allJobs.get(i);
+            if (listing.containsValue(value) || listing.containsKey(value)){
+                if (!selectedJobs.contains(listing)){
+
+                    selectedJobs.add(listing);
+                }
+
+            }
+
+        }
+//        for (HashMap<String, String> row : allJobs) {
+//
+//            String aValue = row.get(value);
+//
+//            if (aValue.contains(value)) {
+//                selectedJobs.add(row);
+//            }
+//        }
+
+        return selectedJobs;
+
+//        String searchStr;
+
+//        ArrayList<HashMap<String, String>> selectedJobs = new ArrayList<>();
+
+//        for (int i = 0; i < allJobs.size(); i++){
+//
+//        }
+
+//        for (HashMap<String, String> selectedJob : allJobs) {
+
+//            String aValue = allJobs.values(row);
+
+//            if (aValue.contains(value)) {
+//                jobs.add(row);
+//            }
+//        }
+
         // TODO - implement this method
-        return null;
+//        return null;
     }
 
     /**
