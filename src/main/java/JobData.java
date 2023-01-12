@@ -5,10 +5,9 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
+
+import static java.lang.System.getProperty;
 
 /**
  * Created by LaunchCode
@@ -98,50 +97,45 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
-
         ArrayList<HashMap<String, String>> selectedJobs = new ArrayList<>();
 
         for (int i = 0; i < allJobs.size(); i++){
             HashMap<String, String> listing = allJobs.get(i);
-            if (listing.containsValue(value) || listing.containsKey(value)){
-                if (!selectedJobs.contains(listing)){
 
-                    selectedJobs.add(listing);
-                }
 
+            String valueNCS = value.toLowerCase();
+//            String lKey = listing.get(value);
+//            String lKeyNCS = lKey.toLowerCase();
+//            String lValue = listing.get(value);
+//            String lValueNCS = lValue.toLowerCase();
+
+            String lK = listing.keySet().toString().toLowerCase();
+            String lV = listing.values().toString().toLowerCase();
+//
+            HashMap<String, String> listingNCS = new HashMap<>();
+            listingNCS.put(lK, lV);
+
+
+
+//            String lNCSKey = listingNCS.get(valueNCS);
+//            String lNCSValue = listingNCS.get(valueNCS);
+//
+//            String lValue = String.join(",", listing.values());
+//            String lKeyNCS = lKey.toLowerCase();
+//            String lValueNCS = lValue.toLowerCase();
+
+
+
+
+            if (lK.contains(valueNCS) || lV.contains(valueNCS)){
+//                if (listing.containsValue(value) || listing.containsKey(value)){
+                    if (!selectedJobs.contains(listing)){
+                        selectedJobs.add(listing);
+                    }
             }
-
         }
-//        for (HashMap<String, String> row : allJobs) {
-//
-//            String aValue = row.get(value);
-//
-//            if (aValue.contains(value)) {
-//                selectedJobs.add(row);
-//            }
-//        }
-
         return selectedJobs;
-
-//        String searchStr;
-
-//        ArrayList<HashMap<String, String>> selectedJobs = new ArrayList<>();
-
-//        for (int i = 0; i < allJobs.size(); i++){
-//
-//        }
-
-//        for (HashMap<String, String> selectedJob : allJobs) {
-
-//            String aValue = allJobs.values(row);
-
-//            if (aValue.contains(value)) {
-//                jobs.add(row);
-//            }
-//        }
-
         // TODO - implement this method
-//        return null;
     }
 
     /**
