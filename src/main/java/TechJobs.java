@@ -63,20 +63,7 @@ public class TechJobs {
                 } else {
 //                    printJobs(JobData.findByValue(searchTerm));
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
-//                    ArrayList<HashMap<String,String>> searchedJobs = new ArrayList<>(JobData.findByValue(searchTerm));
-//                    ArrayList<HashMap<String,String>> filteredJobs = new ArrayList<>();
-//                    Collections.sort(searchedJobs);
 
-
-//                    for(int i = 0; i<searchedJobs.size(); i++){
-//                        HashMap<String,String> filteredJob = new HashMap<>();
-//                        filteredJob = searchedJobs.get(i);
-//                        if (searchedJobs.contains(searchField)){
-//                            filteredJobs.add(filteredJob);
-//                        }
-//
-//                    printJobs(filteredJobs);
-//                    }
                 }
             }
         }
