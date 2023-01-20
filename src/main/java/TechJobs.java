@@ -152,17 +152,17 @@ public class TechJobs {
 
 //        System.out.println("printJobs is not implemented yet");
         if (someJobs.size() == 0){
-            System.out.println("No results found.");
+            System.out.println("No Results");
         } else {
 
         for (int i = 0; i<someJobs.size(); i++) {
             HashMap<String, String> listings = someJobs.get(i);
-                System.out.println("*****");
+                System.out.println("\n*****");
             for (Map.Entry<String, String> listing : listings.entrySet()) {
 
                 System.out.println(listing.getKey() + ": " + listing.getValue());
             }
-                System.out.println("*****\n");
+                System.out.println("*****");
         }
         }
     }

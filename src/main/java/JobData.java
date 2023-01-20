@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.*;
 
-import static java.lang.System.getProperty;
+//import static java.lang.System.getProperty;
 
 /**
  * Created by LaunchCode
@@ -66,13 +66,24 @@ public class JobData {
      * @param column   Column that should be searched.
      * @param value Value of teh field to search for
      * @return List of all jobs matching the criteria
-     */
+     **/
     public static ArrayList<HashMap<String, String>> findByColumnAndValue(String column, String value) {
 
         // load data, if not already loaded
         loadData();
 
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
+//        for (int i = 0; i < allJobs.size(); i++){
+//            HashMap<String, String> listing = allJobs.get(i);
+//            String valueNCS = value.toLowerCase();
+//            String lK = listing.keySet().toString().toLowerCase();
+//            String lV = listing.values().toString().toLowerCase();
+//
+//            HashMap<String, String> listingNCS = new HashMap<>();
+//            listingNCS.put(lK, lV);
+//
+//            if (lK.contains(valueNCS) || lV.contains(valueNCS)){
 
         for (HashMap<String, String> row : allJobs) {
 
