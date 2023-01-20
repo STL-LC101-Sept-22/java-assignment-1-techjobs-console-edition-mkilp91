@@ -74,22 +74,11 @@ public class JobData {
 
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
-//        for (int i = 0; i < allJobs.size(); i++){
-//            HashMap<String, String> listing = allJobs.get(i);
-//            String valueNCS = value.toLowerCase();
-//            String lK = listing.keySet().toString().toLowerCase();
-//            String lV = listing.values().toString().toLowerCase();
-//
-//            HashMap<String, String> listingNCS = new HashMap<>();
-//            listingNCS.put(lK, lV);
-//
-//            if (lK.contains(valueNCS) || lV.contains(valueNCS)){
-
         for (HashMap<String, String> row : allJobs) {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+            if (aValue.toLowerCase().contains(value.toLowerCase())) {
                 jobs.add(row);
             }
         }
