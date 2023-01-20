@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -64,10 +61,13 @@ public class TechJobs {
                 if (searchField.equals("all")) {
                     printJobs(JobData.findByValue(searchTerm));
                 } else {
+//                    printJobs(JobData.findByValue(searchTerm));
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
+
                 }
             }
         }
+
     }
 
     // ﻿Returns the key of the selected item from the choices Dictionary
@@ -120,6 +120,37 @@ public class TechJobs {
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
-        System.out.println("printJobs is not implemented yet");
+//        format should be exactly as follows:
+//        *****
+//        position type: Data Scientist / Business Intelligence
+//        name: Sr. IT Analyst (Data/BI)
+//        employer: Bull Moose Industries
+//        location: Saint Louis
+//        core competency: Statistical Analysis
+//        *****
+//
+//        *****
+//        position type: Web - Back End
+//        name: Ruby specialist
+//        employer: LaunchCode
+//        location: Saint Louis
+//        core competency: Javascript
+//        *****
+
+//        System.out.println("printJobs is not implemented yet");
+        if (someJobs.size() == 0){
+            System.out.println("No Results");
+        } else {
+
+        for (int i = 0; i<someJobs.size(); i++) {
+            HashMap<String, String> listings = someJobs.get(i);
+                System.out.println("\n*****");
+            for (Map.Entry<String, String> listing : listings.entrySet()) {
+
+                System.out.println(listing.getKey() + ": " + listing.getValue());
+            }
+                System.out.println("*****");
+        }
+        }
     }
 }

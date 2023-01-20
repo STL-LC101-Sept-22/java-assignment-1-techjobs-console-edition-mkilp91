@@ -5,10 +5,9 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
+
+//import static java.lang.System.getProperty;
 
 /**
  * Created by LaunchCode
@@ -67,7 +66,7 @@ public class JobData {
      * @param column   Column that should be searched.
      * @param value Value of teh field to search for
      * @return List of all jobs matching the criteria
-     */
+     **/
     public static ArrayList<HashMap<String, String>> findByColumnAndValue(String column, String value) {
 
         // load data, if not already loaded
@@ -79,7 +78,7 @@ public class JobData {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+            if (aValue.toLowerCase().contains(value.toLowerCase())) {
                 jobs.add(row);
             }
         }
@@ -98,8 +97,25 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
+        ArrayList<HashMap<String, String>> selectedJobs = new ArrayList<>();
+
+        for (int i = 0; i < allJobs.size(); i++){
+            HashMap<String, String> listing = allJobs.get(i);
+            String valueNCS = value.toLowerCase();
+            String lK = listing.keySet().toString().toLowerCase();
+            String lV = listing.values().toString().toLowerCase();
+
+            HashMap<String, String> listingNCS = new HashMap<>();
+            listingNCS.put(lK, lV);
+
+            if (lK.contains(valueNCS) || lV.contains(valueNCS)){
+                    if (!selectedJobs.contains(listing)){
+                        selectedJobs.add(listing);
+                    }
+            }
+        }
+        return selectedJobs;
         // TODO - implement this method
-        return null;
     }
 
     /**
